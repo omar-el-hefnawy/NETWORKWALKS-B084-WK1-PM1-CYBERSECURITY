@@ -33,7 +33,7 @@ This README documents my Week 1 lab environment, network configuration, verifica
 | Kali network interface | `eth0` |
 | IPv4 assignment | Static, configured through the NetworkManager GUI |
 | Shared folder | Configured through VMware VM settings |
-| Snapshot | Created; restoration not tested |
+| Snapshot | Created|
 
 ## 3. Network design and Kali configuration
 
@@ -59,7 +59,7 @@ The gateway address `10.0.0.2` belongs to the VMware NAT configuration; it was n
 5. Inspected the interface address and routing table:
 
    ```bash
-   ip -br addr
+   ip addr
    ip route
    ```
 
@@ -67,8 +67,6 @@ The gateway address `10.0.0.2` belongs to the VMware NAT configuration; it was n
 7. Created a snapshot at the end of setup. Snapshot restoration has not been tested.
 
 ### Kali setup evidence
-
-Add your own screenshots to `assets/screenshots/`, using these filenames or updating the paths below.
 
 ![VMware VMnet8 NAT configuration](assets/screenshots/01-vmware-vmnet8-nat.png)
 
@@ -104,8 +102,6 @@ Add your own screenshots to `assets/screenshots/`, using these filenames or upda
 | Ping to a public IP address | Successful |
 | Opened YouTube in Kali's browser | Successful at the time of testing |
 | Direct Kali-to-Android connectivity | Tested successfully; see Section 6 |
-| Nmap installation/version | Not checked |
-| Snapshot restoration | Not tested |
 
 The successful browser test confirmed that Internet access and name resolution were working at the time. The network uses NAT and has not been established as an air-gapped environment.
 
@@ -131,9 +127,6 @@ This command brings up the named NetworkManager connection profile. It is not a 
 
 **Takeaway:** An interface having an IP address does not guarantee that the intended connection profile is active or that routes and DNS are working. Checking the active connection and routing table is useful when troubleshooting connectivity.
 
-![NetworkManager troubleshooting evidence](assets/screenshots/08-networkmanager-troubleshooting.png)
-
-*Figure 8. NetworkManager profile activation and/or subsequent successful checks.*
 
 ## 6. Additional virtual machines
 
@@ -143,11 +136,11 @@ I configured the Android VM's network and verified both Internet access and conn
 
 ![Android VM network configuration](assets/screenshots/09-android-network-configuration.png)
 
-*Figure 9. Android VM network configuration.*
+*Figure 8. Android VM network configuration.*
 
 ![Android VM Internet and Kali connectivity tests](assets/screenshots/10-android-connectivity-tests.png)
 
-*Figure 10. Tests confirming Internet access and connectivity with Kali.*
+*Figure 9. Tests confirming Internet access and connectivity with Kali.*
 
 ### Windows VM — planned for the future
 
@@ -161,7 +154,9 @@ I completed the six live Wireshark labs on the NetworkWalks portal. Each lab con
 
 I also completed the basic Wireshark quiz and the advanced Wireshark quiz. Each quiz contained 10 questions across different lab environments. I passed both quizzes and saved screenshots showing the results, scores, and questions answered incorrectly.
 
-Add the evidence images below. Use filenames that clearly identify each quiz and result.
+![Wireshark Lab completion results](assets/screenshots/merged-images.png)
+
+*Figure 10. Wireshark lab results.*
 
 ![Wireshark basic quiz result](assets/screenshots/11-wireshark-basic-quiz-result.png)
 
@@ -171,7 +166,6 @@ Add the evidence images below. Use filenames that clearly identify each quiz and
 
 *Figure 12. Advanced Wireshark quiz result.*
 
-You can also add selected screenshots from individual labs, if permitted. Avoid publishing sensitive information from packet captures or lab environments.
 
 ## 8. Summary and next steps
 
@@ -183,11 +177,9 @@ You can also add selected screenshots from individual labs, if permitted. Avoid 
 - Configured Android VM networking and successfully tested Internet access and connectivity with Kali.
 - Completed six live Wireshark labs and passed both the basic and advanced quizzes.
 
-**Planned or not yet verified**
+**Planned**
 - Install and configure the Windows VM when home Internet access is reliable.
 - Test Windows VM Internet access and connectivity with Kali and Android.
-- Test restoring the Kali snapshot.
-- Check whether Nmap is installed and record its version if required.
 
 ## 9. Safety and scope
 
